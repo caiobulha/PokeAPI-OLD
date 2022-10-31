@@ -3,24 +3,29 @@ import '../Styles/Dex.css'
 import PokemonList from './PokemonList'
 
 function Dex() {
+    const[pokemons, setPokemons] = useState([])
     function SetPokedex() {
-        const[pokemons, setPokemons] = useState([])
-        const[url, setURL] = useState()
         fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=5`, {
             'method': 'GET'
         }).then(response => response.json().then(data => {
-            setURL(data.results.map(el => (
-                el.url
-            )))
+            const pokemonsArray = []
+            for (const pokemon of data.results){
+                fetch(pokemon.url, { 
+                    'method': 'get'
+                }).then(pokeResponse => pokeResponse.json().then(data =>{
+                    pokemonsArray.push(data)
+                }))
+            }
+            console.log(pokemonsArray)
+            setPokemons(pokemonsArray)
         }))
     }
     useEffect(() => {
         SetPokedex()
     }, [])
-
     return(
         <div>
-            {<PokemonList lista={'a'}/>}
+            {pokemons && <PokemonList lista={pokemons}/>}
         </div>
     )
 }

@@ -1,11 +1,9 @@
 import React from 'react' //rfc
 
-export default function PokemonList({name}) {
+export default function PokemonList({lista}) {
   return (
     <div>
-      {lista.map((el, index) => (
-        <div key={index}>{el.name}</div>
-      ))}
+      {lista}
     </div>
   )
 }

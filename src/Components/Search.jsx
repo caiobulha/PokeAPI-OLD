@@ -3,24 +3,7 @@ import '../Styles/Search.css'
 import Card from './Card'
 import pika from '../assets/pikachu.gif'
 import mimi from '../assets/mimikyu.gif'
-import waterI from '../assets/types/water_type.png'
-import bugI from '../assets/types/bug_type.png'
-import darkI from '../assets/types/dark_type.png'
-import dragonI from '../assets/types/dragon_type.png'
-import eletricI from '../assets/types/eletric_type.png'
-import fairyI from '../assets/types/fairy_type.png'
-import fightingI from '../assets/types/fighting_type.png'
-import fireI from '../assets/types/fire_type.png'
-import flyingI from '../assets/types/flying_type.png'
-import ghostI from '../assets/types/ghost_type.png'
-import grassI from '../assets/types/grass_type.png'
-import groundI from '../assets/types/ground_type.png'
-// import iceI from '../assets/types/ice_type.png'
-import normalI from '../assets/types/normal_type.png'
-import poisonI from '../assets/types/poison_type.png'
-import psychicI from '../assets/types/psychic_type.png'
-import rockI from '../assets/types/rock_type.png'
-import steelI from '../assets/types/steel_type.png'
+import images from './Images'
 
 function Search() {
     const[pokeName, setPokeName] = useState()
@@ -29,24 +12,24 @@ function Search() {
     const[pikachu, setPikachu] = useState()
     const resultado = useRef()
     const typesTranslator = {
-        'fire': fireI,
-        'water': waterI,
-        'dark': darkI,
-        'dragon': dragonI,
-        'fight': fightingI,
-        'flying': flyingI,
-        'ghost': ghostI,
-        'ice': ghostI,
-        'grass': grassI,
-        'psychic': psychicI,
-        'ground': groundI,
-        'stone': rockI,
-        'normal': normalI,
-        'steel': steelI,
-        'fairy': fairyI,
-        'bug': bugI,
-        'poison': poisonI,
-        'electric': eletricI
+        'fire': images.fireI,
+        'water': images.waterI,
+        'dark': images.darkI,
+        'dragon': images.dragonI,
+        'fight': images.fightingI,
+        'flying': images.flyingI,
+        'ghost': images.ghostI,
+        'ice': images.ghostI,
+        'grass': images.grassI,
+        'psychic': images.psychicI,
+        'ground': images.groundI,
+        'stone': images.rockI,
+        'normal': images.normalI,
+        'steel': images.steelI,
+        'fairy': images.fairyI,
+        'bug': images.bugI,
+        'poison': images.poisonI,
+        'electric': images.eletricI
     }
 
     function Error() {

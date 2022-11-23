@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "../Styles/Dex.css";
-import PokemonList from "./PokemonList";
 import images from "./Images";
 import Card from './Card'
+import PokemonList from "./PokemonList";
 
 function Dex() {
   const [pokemons, setPokemons] = useState([]);
-
+  const pContainer = useRef()
   const typesTranslator = {
     fire: images.fireI,
     water: images.waterI,
@@ -65,19 +65,16 @@ function Dex() {
       method: "GET",
     }).then((response) =>
       response.json().then((data) => {
-        setPokemons(() => {
           const newPokemons = [];
           for (const pokemon of data.results) {
             fetch(pokemon.url).then((dataResponse) =>
               dataResponse
                 .json()
                 .then((dexData) => 
-                  newPokemons.push(dexData)
+                  pContainer.current != null && pContainer.current.insertAdjacentHTML(`beforeend`, dexData.name)
                 )
             );
           }
-          return newPokemons;
-        });
       })
     );
   }
@@ -85,8 +82,7 @@ function Dex() {
     SetPokedex();
   }, []);
   return (
-    <div>
-      <PokemonList lista={pokemons} />
+    <div ref={pContainer}>
     </div>
   );
 }

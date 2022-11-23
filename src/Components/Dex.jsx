@@ -61,7 +61,7 @@ function Dex() {
   };
 
   function SetPokedex() {
-    fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=5`, {
+    fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`, {
       method: "GET",
     }).then((response) =>
       response.json().then((data) => {

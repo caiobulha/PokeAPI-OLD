@@ -1,0 +1,57 @@
+.pokemon {
+    width: 380px;
+    background-color: transparent;
+    height: 300px;
+    border-radius: 2%;
+    border: 2px solid #111222;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.up {
+    color: white;
+    height: 70%;
+    width: 100%;
+    background-image: url('../assets/backgrounds/default.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    flex-flow: column nowrap;
+    gap: 15px 0px;
+    border-bottom: 2px #111222 solid;
+    border-radius: 3px;
+}
+
+
+.info {
+    display: flex;
+    background-color: blue;
+    border-radius: 50px;
+    height: fit-content;
+    position: absolute;
+    left: 230px;
+    width: 300px;
+}
+
+.bottom {
+    height: 30%;
+    width: 100%;
+    color: black;
+}
+
+.Sparkles {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    margin: 7px;
+    cursor: pointer;
+    top: 0;
+}
+
+.Sparkles:hover {
+    opacity: 0.7;
+}

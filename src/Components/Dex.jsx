@@ -1,11 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import "../Styles/Dex.css";
 import images from "./Images";
-import Card from './Card'
-import PokemonList from "./PokemonList";
+import MiniCard from "./MiniCard";
 
 function Dex() {
-  const [pokemons, setPokemons] = useState([]);
   const pContainer = useRef()
   const typesTranslator = {
     fire: images.fireI,
@@ -70,8 +68,10 @@ function Dex() {
             fetch(pokemon.url).then((dataResponse) =>
               dataResponse
                 .json()
-                .then((dexData) => 
-                  pContainer.current != null && pContainer.current.insertAdjacentHTML(`beforeend`, dexData.name)
+                .then((dexData) => {
+                  pContainer.current != null && (pContainer.current.innerHTML += <MiniCard nome={dexData.name} peso={dexData.weigth}></MiniCard>)
+                  console.log(<MiniCard nome={dexData.name} peso={dexData.weigth}/>)
+                  }
                 )
             );
           }
@@ -82,7 +82,7 @@ function Dex() {
     SetPokedex();
   }, []);
   return (
-    <div ref={pContainer}>
+    <div ref={pContainer} className='pc'>
     </div>
   );
 }

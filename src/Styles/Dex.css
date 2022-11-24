@@ -1,0 +1,8 @@
+.pc {
+    display: flex;
+    width: 100%;
+    background-color: red;
+    height: auto;
+    justify-content: space-around;
+    gap: 20px 15px;
+}

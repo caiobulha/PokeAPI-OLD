@@ -1,10 +1,10 @@
 import './App.css';
-// import Main from './Components/Main';
+import Main from './Components/Main';
 import MiniCard from './Components/MiniCard';
 function App() {
   return (
     <div className="App">
-      <MiniCard></MiniCard>
+      <Main/>
     </div>
   );
 }

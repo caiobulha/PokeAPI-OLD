@@ -4,8 +4,17 @@
     width: 80vw;
     height: 90vh;
     font-family: 'Roboto';
+    margin-left: 20%;
+    margin-top: 10%;
 }
 
 body {
     font-family: 'Roboto';
 }
+
+@media only screen and (max-width: 800px) {
+    .content {
+        width: 70vw;
+        margin-left: 25%;
+    }
+  }

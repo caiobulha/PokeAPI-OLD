@@ -1,21 +1,21 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, useState } from 'react'
 import PropTypes from 'prop-types'
 import '../Styles/MiniCard.css'
 import Sparkles from "../assets/sparkles.png" 
 
-function MiniCard({nome, peso, img, tipo, shiny, desc, num, altura}) {
+function MiniCard({nome, peso, img, tipo, shiny, num, altura}) {
+    const[brilhante, setBrilhante] = useState(false)
     return (
         <div className='pokemon'>
             <div className="up">
-                <img src={Sparkles} alt="Sparkles" className='Sparkles'/>
-                <img src={img} alt="Pokemon Image" />
+                <img src={Sparkles} alt="Sparkles" className='Sparkles' onClick={() => setBrilhante(!brilhante)}/>
+                <img src={!brilhante ? img : shiny} alt="Pokemon Image" />
                 <p>#{num}</p>
             </div>
             <div className="info">
                 <h2>Info:</h2>
-                <h3>Peso: {peso}</h3>
-                <h3>Altura: {altura}</h3>
-                <p>{desc}</p>
+                <h3>Peso: {peso}Lbs</h3>
+                <h3>Altura: {altura * 10}cm</h3>
             </div>
             <div className="bottom">
                 <h1>{nome}</h1>
@@ -29,8 +29,7 @@ MiniCard.propTypes = {
     nome: PropTypes.string,
     peso: PropTypes.number,
     num: PropTypes.number,
-    altura: PropTypes.number,
-    desc: PropTypes.string
+    altura: PropTypes.number
 }
 
 export default MiniCard;

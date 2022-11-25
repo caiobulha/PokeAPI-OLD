@@ -8,6 +8,10 @@
     position: relative;
 }
 
+.filtros {
+    background-color: rgb(145, 145, 145);
+}
+
 @media only screen and (max-width: 1000px) {
     .pc {
         grid-template-columns: repeat(3, auto);

@@ -16,6 +16,7 @@ import electric from '../assets/backgrounds/eletric.gif'
 import Sparkles from '../assets/sparkles.png'
 import hd from '../assets/hd.png'
 import { useEffect, useState } from 'react'
+import { FiArrowUp } from "react-icons/fi";
 import Paragraph from './Paragraph'
 
 function Card({name, description, weight, height, captureRate, img, bg, type, num, shiny, legendary, highQuality, hp, attack, spAttack, spDefence, speed}) {
@@ -73,21 +74,22 @@ function Card({name, description, weight, height, captureRate, img, bg, type, nu
                 <h1>#{num}</h1>
             </div>
             <div className="contentSpace">
-                    <div className="flavor">
-                        <p >{description}</p>
-                    </div>
-                    <div className="flavorComplements">
-                        {descs}
-                    </div>
                     <div className="types">
                         {type}
                     </div>
                     <div className="stats">
-                        <p>{hp}</p>
-                        <p>{attack}</p>
-                        <p>{spAttack}</p>
-                        <p>{spDefence}</p>
-                        <p>{speed}</p>
+                        <span>{hp} <div className="bar"></div></span>
+                        <span>{attack} <div className="bar"></div></span>
+                        <span>{spAttack} <div className="bar"></div></span>
+                        <span>{spDefence} <div className="bar"></div></span>
+                        <span>{speed} <div className="bar"></div></span>
+                    </div>
+                    <div className="flavorComplements">
+                        {descs}
+                    </div>
+                    <div className="flavor">
+                        <p>{description}</p>
+                        <FiArrowUp style={{position: "absolute", bottom: "0", right: "0", margin: "10px"}}/>
                     </div>
                     <div className="legendary">
                     {legendary && <p>Legendary</p>}

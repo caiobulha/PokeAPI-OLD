@@ -5,9 +5,6 @@ function Dex({data, loading}) {
 
   return (
     <div className='pc'>
-    <div className="filtros">
-      Filtros
-    </div>
     {!loading ? data : <img src={pikachu} style={{width: '70%'}}></img>}
     </div>
   );

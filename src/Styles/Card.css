@@ -1,5 +1,6 @@
+
 .card {
-    background-color: red;
+    border: 1px solid black;
     height: 400px;
     display: flex;
     flex-flow: row nowrap;
@@ -69,22 +70,23 @@
     justify-content: center;
     align-items: center;
     width: 55%;
+    background-color: white;
     flex-flow: column nowrap;
 }
 
 .types {
     display: flex;
     flex-flow: row nowrap;
-}
-
-.types > * {
-    margin: 0px 10px;
+    gap: 0px 10px;
 }
 
 .flavor {
-  background-color: white;
-  border-radius: 10px;
-  max-height: 100px;
+  background-color: gray;
+  border-radius: 3px;
+  max-height: 150px;
+  padding: 5px 10px;
+  width: 95%;
+  position: relative;
 }
 
 .flavor ~ .flavorComplements{
@@ -93,9 +95,8 @@
 
 .flavorComplements {
     position: absolute;
-    background-color: white;
-    transform: translateY(-180px);
-    width: 53%;
+    background-color: red;
+    width: 53%; 
     overflow-y: scroll;
     opacity: 0;
     transition: .3s ease-in-out;

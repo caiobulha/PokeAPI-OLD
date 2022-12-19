@@ -50,7 +50,7 @@ function Search() {
     }
 
     function insertInfo(data, dataSpecies) {
-        var card = <Card name={data.name} description={dataSpecies.flavor_text_entries[0].flavor_text} weight={data.weight} height={data.height} captureRate={dataSpecies.capture_rate} img={data.sprites.front_default} bg={data.types[0].type.name} type={typeHandler(data.types)} num={data.id} shiny={data.sprites.front_shiny} legendary={dataSpecies.is_legendary} highQuality={data.sprites.other[`official-artwork`].front_default} hp={data.stats[0].stat.name} attack={data.stats[1].stat.name} spAttack={data.stats[2].stat.name} spDefence={data.stats[3].stat.name} speed={data.stats[4].stat.name}/>
+        var card = <Card name={data.name} description={dataSpecies.flavor_text_entries[0].flavor_text} weight={data.weight} height={data.height} captureRate={dataSpecies.capture_rate} img={data.sprites.front_default} bg={data.types[0].type.name} type={typeHandler(data.types)} num={data.id} shiny={data.sprites.front_shiny} legendary={dataSpecies.is_legendary} highQuality={data.sprites.other[`official-artwork`].front_default} hp={data.stats[0].base_stat} attack={data.stats[1].base_stat} spAttack={data.stats[2].base_stat} spDefence={data.stats[3].base_stat} speed={data.stats[4].base_stat}/>
         setRes(card)
     }
 
@@ -87,8 +87,8 @@ function Search() {
             <span>Try by the <span style={{color: 'blue'}}>number</span> or the <span style={{color: 'red'}}>name</span></span>
             <input type="text" name="Pokemon" id="pokemon" placeholder='Search Here...' onChange={(e) => setPokeName(e.target.value)}></input>
             <button onClick={PokeAPI}>Go!</button>
-            {pikachu ? <img src={pika}></img> : mimikyu ? <img src={mimi}></img> : false}
-            <div className="resWrapper" style={{transform: res? 'translateY(40%)': 'translateY(-1000px)'}} ref={resultado}>{res}</div>
+            {pikachu ? <img src={pika} style={{width: "200px", height: "90px"}}></img> : mimikyu ? <img src={mimi} style={{width: "200px", height: "90px"}}></img> : false}
+            <div className="resWrapper" style={{transform: res? 'translateY(10%)': 'translateY(-1000px)'}} ref={resultado}>{res}</div>
         </div>
     )
 }

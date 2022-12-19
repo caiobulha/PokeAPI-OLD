@@ -1,3 +1,8 @@
+body {
+  overflow-y: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
 .card {
     border: 1px solid black;
@@ -70,6 +75,7 @@
     justify-content: center;
     align-items: center;
     width: 55%;
+    gap: 30px 0px;
     background-color: white;
     flex-flow: column nowrap;
 }
@@ -81,7 +87,6 @@
 }
 
 .flavor {
-  background-color: gray;
   border-radius: 3px;
   max-height: 150px;
   padding: 5px 10px;
@@ -107,6 +112,49 @@
 .legendary p {
     font-size: 1.5em;
     animation: rainbow 3s linear infinite;
+}
+
+.bar {
+  width: 30px;
+  background-color: green;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 5px;
+  transition: .5s ease-in-out;
+}
+
+.statsName{
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+}
+
+.statsInfo {
+  display: flex;
+  justify-content: left;
+  gap: 4px 0px;
+  margin-left: 5px;
+  flex-flow: column;
+}
+
+.stats {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: row nowrap;
+  font-family: 'Michroma';
+}
+
+.fullStat {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  gap: 5px 10px ;
+  flex-flow: row nowrap;
 }
 
 @keyframes rainbow {

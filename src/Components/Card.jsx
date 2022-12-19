@@ -23,6 +23,7 @@ function Card({name, description, weight, height, captureRate, img, bg, type, nu
     const[sparkling, setSparkling] = useState(false)
     const[descs, setDesc] = useState([])
     const[HD, setHD] = useState()
+    const[stats, setStats] = useState(false)
     const typesObject = {
         'fire': fire,
         'water': water,
@@ -55,11 +56,13 @@ function Card({name, description, weight, height, captureRate, img, bg, type, nu
                     descriptions.push(<Paragraph content={data.flavor_text_entries[i].version.name} style></Paragraph>)
                 }
                 setDesc(descriptions)
+                setTimeout(() => setStats(true), 500)
             })
         })
     }
     useEffect(() => (
         writeFlavors()
+
     ), [])
 
     return(
@@ -78,12 +81,22 @@ function Card({name, description, weight, height, captureRate, img, bg, type, nu
                         {type}
                     </div>
                     <div className="stats">
-                        <span>{hp} <div className="bar"></div></span>
-                        <span>{attack} <div className="bar"></div></span>
-                        <span>{spAttack} <div className="bar"></div></span>
-                        <span>{spDefence} <div className="bar"></div></span>
-                        <span>{speed} <div className="bar"></div></span>
+                        <div className='statsName'>
+                            <span>HP:</span>
+                            <span>Attack: </span>
+                            <span>Special Attack: </span>
+                            <span>Special Defense: </span>
+                            <span>Speed: </span>
+                        </div>
+                        <div className="statsInfo">
+                            <div className="bar" style={{width: stats && `${hp * 1.5}px`}}>{hp}</div>
+                            <div className="bar" style={{width: stats && `${attack * 1.5}px`}}> {attack} </div>
+                            <div className="bar" style={{width: stats && `${spAttack * 1.5}px`}}>{spAttack} </div>
+                            <div className="bar" style={{width: stats && `${spDefence * 1.5}px`}}>{spDefence}</div>
+                            <div className="bar" style={{width: stats && `${speed * 1.5}px`}}>{speed}</div>
+                        </div>
                     </div>
+
                     <div className="flavorComplements">
                         {descs}
                     </div>

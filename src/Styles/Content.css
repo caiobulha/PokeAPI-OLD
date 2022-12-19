@@ -4,8 +4,10 @@
     width: 80vw;
     height: 90vh;
     font-family: 'Roboto';
-    margin-left: 20%;
-    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+    margin-left: 20vw;
 }
 
 body {
@@ -14,7 +16,7 @@ body {
 
 @media only screen and (max-width: 800px) {
     .content {
-        width: 70vw;
-        margin-left: 25%;
+        width: 80vw;
+        margin-left: 25vw;
     }
   }

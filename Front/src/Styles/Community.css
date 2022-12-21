@@ -1,0 +1,9 @@
+.Community {
+    background-color: rgba(0, 0, 0, 0.866);
+    border-radius: 15px;
+    height: 75vh;
+    width: 40vw;
+    left: 96%;
+    top: 120px;
+    position: absolute;
+}

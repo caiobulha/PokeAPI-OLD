@@ -1,0 +1,26 @@
+.pc {
+    display: grid;
+    width: 80vw;
+    height: auto;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    gap: 15px 5px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.filtros {
+    background-color: rgb(145, 145, 145);
+}
+
+@media only screen and (max-width: 1000px) {
+    .pc {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .pc {
+        grid-template-columns: auto;
+    }
+  }

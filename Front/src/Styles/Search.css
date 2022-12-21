@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:wght@300&display=swap');
+
+.search button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 1.7em;
+    cursor: pointer;
+}
+
+.search {
+    background-image: url('../assets/pokemon_banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px 0px   ;
+}
+
+.search button:hover {
+    opacity: 0.9;
+    transform: scale(1.5);
+}
+
+.search input {
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid black;
+    width: 200px;
+    display: flex;
+    height: 50px;
+    z-index: 2;
+    font-size: 1.5em;
+    position: absolute;
+    padding: 15px;
+}
+
+.search input::placeholder {
+    color: black;
+}
+
+.inputWrapper {
+    position: relative;
+    width: 200px;
+    height: 100px;
+}
+
+.suggestion {
+    position: absolute;
+    color: rgba(0, 0, 0, 0.533);
+    background-color: white;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    z-index: 1;
+    border: 1px solid black;
+    width: 200px;
+    display: flex;
+    font-size: 1.5em;
+    align-items: center;
+    padding: 15px;
+    font-family: 'Roboto';
+}
